@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* H-Daily Admin Custom Styles */
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #FDF9F2; /* Website cream background */
+  color: #1F2A2E; /* Website secondary color */
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E8DFD3;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #059669;
+}
+
+/* Admin card transitions */
+.admin-card {
+  transition: all 0.2s ease;
+  border: 1px solid #E8DFD3;
+}
+
+.admin-card:hover {
+  box-shadow: 0 12px 24px -12px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+/* Sidebar item transitions */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  color: #2C3A3F;
+  font-size: 14px;
+  border: 1px solid transparent;
+}
+
+.sidebar-item:hover {
+  background-color: #F5F0E8;
+  color: #10b981;
+  transform: translateX(4px);
+  border-color: #E8DFD3;
+}
+
+.sidebar-item.active {
+  background-color: #10b981;
+  color: white;
+  transform: translateX(4px);
+  border-color: #10b981;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+}
+
+.sidebar-item i {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #10b981;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #059669;
+  transform: translateY(-1px);
+}
+
+/* Status badges */
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* Modal transitions */
+.modal-transition {
+  transition: opacity 0.2s ease;
+}

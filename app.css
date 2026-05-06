@@ -1,0 +1,574 @@
+/* ===============================================
+   H-Daily Admin Panel - Website-Hdaily Branding
+   Color philosophy: Match main website design
+   Primary: #10b981 (green)
+   Secondary: #1F2A2E (dark)
+   Cream: #FDF9F2 (background)
+   =============================================== */
+
+/* ---------- RESET & BASE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #FDF9F2; /* Match website cream background */
+    color: #1F2A2E; /* Website secondary color */
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Typography - match website */
+h1, h2, h3, h4, .font-serif, .serif-heading {
+    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+/* ---------- CUSTOM SCROLLBAR ---------- */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #E8DFD3; /* Website border color */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #10b981; /* Website primary color */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #059669; /* Website primary dark */
+}
+
+/* ---------- WEBSITE PRIMARY COLORS (replacing gold) ---------- */
+.h-primary {
+    color: #10b981;
+}
+
+.h-primary-bg {
+    background-color: #10b981;
+}
+
+.h-primary-border {
+    border-color: #10b981;
+}
+
+.h-primary-hover:hover {
+    color: #10b981 !important;
+    transition: all 0.2s ease;
+}
+
+/* ---------- BUTTONS & INTERACTIONS ---------- */
+.btn-primary {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.2);
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(16, 185, 129, 0.25);
+}
+
+.btn-outline-primary {
+    background: transparent;
+    border: 1.5px solid #10b981;
+    color: #10b981;
+    transition: all 0.2s;
+}
+
+.btn-outline-primary:hover {
+    background: #10b981;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+    background: #FFFFFF;
+    border-right: 1px solid #E8DFD3; /* Website border */
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.02);
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 0;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    color: #3A4A4F;
+    transition: all 0.2s;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-item i {
+    width: 1.5rem;
+    font-size: 1.1rem;
+    color: #6E7A7A; /* Website muted */
+    transition: color 0.2s;
+}
+
+.sidebar-item:hover {
+    background-color: rgba(16, 185, 129, 0.06);
+    color: #10b981;
+}
+
+.sidebar-item:hover i {
+    color: #10b981;
+}
+
+.sidebar-item.active {
+    background-color: rgba(16, 185, 129, 0.08);
+    border-left-color: #10b981;
+    color: #10b981;
+}
+
+.sidebar-item.active i {
+    color: #10b981;
+}
+
+/* ---------- CARDS & CONTAINERS ---------- */
+.admin-card {
+    background: white;
+    border-radius: 1.25rem;
+    border: 1px solid #E8DFD3; /* Website border */
+    transition: all 0.25s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.admin-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.1);
+    border-color: #E8DFD3;
+}
+
+.premium-card {
+    background: white;
+    border-radius: 1.5rem;
+    border: 1px solid #E8DFD3;
+    overflow: hidden;
+    transition: all 0.2s;
+}
+
+.card-header-premium {
+    background: linear-gradient(135deg, #FDF9F2 0%, #F5F0E8 100%); /* Website cream to light */
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #E8DFD3;
+    font-weight: 600;
+}
+
+/* ---------- TABLES ---------- */
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.data-table th {
+    text-align: left;
+    padding: 1rem 1.25rem;
+    background-color: #F5F0E8; /* Website light */
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #4F5A5E; /* Website text */
+    border-bottom: 1px solid #E8DFD3;
+}
+
+.data-table td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #E8DFD3;
+    color: #1F2A2E; /* Website secondary */
+    font-size: 0.9rem;
+}
+
+.data-table tr:hover td {
+    background-color: #FDF9F2; /* Website cream */
+}
+
+/* ---------- STATUS BADGES ---------- */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.status-pending {
+    background: #F5F0E8;
+    color: #10b981;
+}
+
+.status-paid {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+.status-shipped {
+    background: #DBEAFE;
+    color: #1D4ED8;
+}
+
+/* ---------- FORMS & INPUTS ---------- */
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1px solid #E8DFD3; /* Website border */
+    border-radius: 0.75rem;
+    background-color: white;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+    color: #1F2A2E; /* Website secondary */
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #10b981; /* Website primary */
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+    display: block;
+    color: #4F5A5E; /* Website text */
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* ---------- MODAL ---------- */
+.modal-overlay {
+    background: rgba(31, 42, 46, 0.5); /* Website secondary with opacity */
+    backdrop-filter: blur(2px);
+}
+
+.modal-container {
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid #E8DFD3;
+    animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ---------- DASHBOARD STATS CARDS ---------- */
+.stat-card {
+    background: white;
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    transition: all 0.2s;
+    border: 1px solid #E8DFD3;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    background: rgba(16, 185, 129, 0.12); /* Website primary with opacity */
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #10b981; /* Website primary */
+}
+
+/* ---------- CHART CONTAINER ---------- */
+.chart-container {
+    background: white;
+    border-radius: 1.25rem;
+    padding: 1rem;
+    border: 1px solid #E8DFD3;
+}
+
+/* ---------- NOTIFICATION / TOAST ---------- */
+.notification-toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #1F2A2E; /* Website secondary */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- PAGINATION ---------- */
+.pagination-btn {
+    padding: 0.5rem 0.9rem;
+    border-radius: 0.5rem;
+    background: white;
+    border: 1px solid #E8DFD3;
+    color: #4F5A5E; /* Website text */
+    transition: all 0.2s;
+}
+
+.pagination-btn:hover,
+.pagination-btn.active {
+    background: #10b981; /* Website primary */
+    border-color: #10b981;
+    color: white;
+}
+
+/* ---------- RESPONSIVE ADJUSTMENTS ---------- */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        z-index: 40;
+        transform: translateX(-100%);
+        transition: transform 0.2s;
+    }
+    
+    .sidebar.mobile-open {
+        transform: translateX(0);
+    }
+    
+    .stat-card {
+        padding: 1rem;
+    }
+    
+    .data-table th,
+    .data-table td {
+        padding: 0.75rem;
+    }
+}
+
+/* ---------- WEBSITE SPECIFIC ELEMENTS ---------- */
+.logo-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    background: linear-gradient(135deg, #10b981 30%, #059669 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.divider-primary {
+    height: 2px;
+    width: 60px;
+    background: #10b981; /* Website primary */
+    margin: 1rem 0;
+}
+
+/* Custom checkbox / radio */
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: #10b981; /* Website primary */
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu-custom {
+    background: white;
+    border-radius: 0.75rem;
+    border: 1px solid #E8DFD3;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    padding: 0.5rem;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background 0.15s;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background: rgba(16, 185, 129, 0.08);
+    color: #10b981;
+}
+
+/* ---------- LOADING SPINNER ---------- */
+.spinner-primary {
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid rgba(16, 185, 129, 0.2);
+    border-top-color: #10b981;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---------- UTILITIES ---------- */
+.bg-cream {
+    background-color: #FDF9F2; /* Website cream */
+}
+
+.bg-light {
+    background-color: #F5F0E8; /* Website light */
+}
+
+.bg-secondary {
+    background-color: #1F2A2E; /* Website secondary */
+}
+
+.text-secondary {
+    color: #1F2A2E; /* Website secondary */
+}
+
+.text-muted {
+    color: #6E7A7A; /* Website muted */
+}
+
+/* Footer inside admin */
+.admin-footer {
+    border-top: 1px solid #E8DFD3;
+    background: #F5F0E8; /* Website light */
+    padding: 1rem 2rem;
+    font-size: 0.75rem;
+    color: #6E7A7A; /* Website muted */
+}
+
+/* Product card inside admin */
+.product-admin-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    border: 1px solid #E8DFD3;
+    transition: 0.2s;
+}
+
+.product-admin-card:hover {
+    border-color: #10b981;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.08);
+}
+
+/* Scrollable tables */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 1rem;
+}
+
+/* ---------- IMAGE PLACEHOLDER ---------- */
+.img-placeholder {
+    background: linear-gradient(135deg, #E8DFD3, #D4C4B0);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6E7A7A; /* Website muted */
+    font-size: 0.7rem;
+}
+
+/* ---------- TEXT SELECTION ---------- */
+::selection {
+    background: #10b981; /* Website primary */
+    color: white;
+}
+
+/* ---------- FOCUS STATES ---------- */
+hr.primary-hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #10b981, transparent);
+    margin: 1.5rem 0;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #10b981; /* Website primary */
+    outline-offset: 2px;
+}
+
+/* ---------- WEBSITE ANIMATIONS ---------- */
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+}
+
+.animate-bounce-in {
+    animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% { 
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    50% { 
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% { 
+        transform: scale(1);
+        opacity: 1;
+    }
+}
