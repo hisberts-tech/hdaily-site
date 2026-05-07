@@ -12,14 +12,15 @@
 
 ### Changed
 - Updated build scripts to use npx for Vercel compatibility
-- Added postinstall script for permission fixes
+- Simplified Vercel configuration for better deployment
 
 ### Fixed
 - TypeScript compiler permission issues in Vercel build
 - Vite permission issues in Vercel build
 - Git authentication and credential configuration
 - Vercel header source pattern validation
+- Removed problematic postinstall script for Windows compatibility
 
 ### Deployed
 - Git repository: https://github.com/hisberts-tech/hdaily-site.git
-- Vercel configuration added
+- Vercel configuration added and simplified
