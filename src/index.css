@@ -109,3 +109,35 @@ body {
 .modal-transition {
   transition: opacity 0.2s ease;
 }
+
+/* Forms & inputs */
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #E8DFD3;
+  border-radius: 0.75rem;
+  background-color: white;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+  color: #1F2A2E;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+  display: block;
+  color: #4F5A5E;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}

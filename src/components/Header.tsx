@@ -1,10 +1,12 @@
 import React from 'react'
+import { useAuth } from '../context/AuthContext'
 
 interface HeaderProps {
   activeTab: string
 }
 
 const Header: React.FC<HeaderProps> = ({ activeTab }) => {
+  const { user, logout } = useAuth()
   const getTabTitle = (tab: string) => {
     const titles: Record<string, string> = {
       dashboard: 'Tableau de bord',
@@ -31,9 +33,17 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
             <i className="fas fa-home text-sm"></i>
           </div>
           <span className="text-sm font-medium hidden sm:inline">
-            Admin H-Daily
+            {user?.fullName ?? 'Admin H-Daily'}
           </span>
         </div>
+        <button
+          onClick={logout}
+          className="text-h-muted hover:text-red-600 transition-colors"
+          aria-label="Déconnexion"
+          title="Déconnexion"
+        >
+          <i className="fas fa-sign-out-alt"></i>
+        </button>
       </div>
     </header>
   )

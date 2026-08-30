@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 const Dashboard: React.FC = () => {
-  const [stats, setStats] = useState({
+  const [stats] = useState({
     revenue: 142500,
     orders: 18,
     products: 0,
     clients: 5
   })
 
-  const [chartData, setChartData] = useState({
+  const [chartData] = useState({
     labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai'],
     datasets: [
       {

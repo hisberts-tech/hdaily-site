@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 import Header from './components/Header'
@@ -10,12 +10,27 @@ import Credit from './pages/Credit'
 import Paniers from './pages/Paniers'
 import Subscription from './pages/Subscription'
 import Settings from './pages/Settings'
+import Login from './pages/Login'
+import { useAuth } from './context/AuthContext'
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [activeTab, setActiveTab] = useState('dashboard')
+  const { user, loading } = useAuth()
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen)
+
+  if (loading) {
+    return (
+      <div className="h-screen flex items-center justify-center bg-h-cream">
+        <i className="fas fa-spinner fa-spin text-2xl text-h-primary"></i>
+      </div>
+    )
+  }
+
+  if (!user) {
+    return <Login />
+  }
 
   return (
     <div className="flex h-screen overflow-hidden bg-h-cream">
